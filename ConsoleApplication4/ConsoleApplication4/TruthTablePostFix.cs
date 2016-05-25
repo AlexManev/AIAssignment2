@@ -113,7 +113,6 @@ namespace AI_Assignment2
             }
 
             _input.Reverse();
-            _output.Clear();
 
             while (_input.Count > 0)
             {
