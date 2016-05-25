@@ -20,8 +20,7 @@ namespace ConsoleApplication4
         }
 
         /// <summary>
-        /// Start Backwards Chaining.
-        /// It searches he knowladgebase until 
+        /// Start Backwards Chaining. 
         /// </summary>
         private void Start()
         {
