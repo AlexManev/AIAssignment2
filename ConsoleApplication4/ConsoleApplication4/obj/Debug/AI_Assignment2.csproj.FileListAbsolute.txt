@@ -1,0 +1,6 @@
+C:\Users\amane\Documents\A2\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.exe.config
+C:\Users\amane\Documents\A2\ConsoleApplication4\ConsoleApplication4\obj\Debug\ConsoleApplication4.exe
+C:\Users\amane\Documents\A2\ConsoleApplication4\ConsoleApplication4\obj\Debug\ConsoleApplication4.pdb
+C:\Users\amane\Documents\A2\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.exe
+C:\Users\amane\Documents\A2\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.pdb
+C:\Users\amane\Documents\A2\ConsoleApplication4\ConsoleApplication4\obj\Debug\AI_Assignment2.csprojResolveAssemblyReference.cache

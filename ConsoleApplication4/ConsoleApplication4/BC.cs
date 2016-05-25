@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace ConsoleApplication4
+namespace AI_Assignment2
 {
     public class BC
     {
@@ -16,17 +16,16 @@ namespace ConsoleApplication4
             _queue = new List<Data>();
             _resultQueue = new  List<string>();
             ReadFromInput(fileName);
-
             Start();
         }
 
         /// <summary>
         /// Start Backwards Chaining. 
         /// </summary>
-        private void Start()
+        public void Start()
         {
             bool result = false;
-            while (_queue[0].Implies != null)
+            while (_queue.Count != 0)
             {
                 foreach (Data data in _knowladgeBase)
                 {
@@ -36,24 +35,20 @@ namespace ConsoleApplication4
                         string[] implies = _queue[0].Implies.Split('&');
                         foreach (string imp in implies)
                         {
-                            if (!_queue.Contains(FindInKB(imp)))
+                            if (!_queue.Contains(FindInKB(imp)) && !_resultQueue.Contains(imp))
                             {
-                                if (FindInKB(imp).Implies == null)
+                                if (FindInKB(imp).Implies != null)
                                     _queue.Add(FindInKB(imp));
-                                else
-                                    _queue.Insert(1, FindInKB(imp));
                             }
 
-                            if(!_resultQueue.Contains(imp))
+                            if (!_resultQueue.Contains(imp))
                                 _resultQueue.Insert(0,imp);
                         }
-
                         _queue.Remove(_queue[0]);
                         break;
                     }
                 }
             }
-
             End(result);
         }
         /// <summary>
@@ -141,7 +136,6 @@ namespace ConsoleApplication4
                             }
                         }
                     }
-
                 }
                 else if (data == "ASK")
                 {
@@ -149,6 +143,7 @@ namespace ConsoleApplication4
                     data = _stream.ReadLine();
                     foreach (Data d in _knowladgeBase)
                     {
+                        
                         if (d.AreYou(data))
                         {
                             foundInKB = true;
@@ -159,7 +154,7 @@ namespace ConsoleApplication4
                     }
                     if (!foundInKB)
                     {
-                        Console.WriteLine("Error: invalid quiry, please change the ASK quiry \n \nPress any key to continue...");
+                        Console.WriteLine("Error: The Knowlade Base doesn't know anything about '{0}'. \n \n Press any key to continue...", data);
                         Console.ReadKey();
                         Environment.Exit(0);
                     }

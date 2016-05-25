@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleApplication4
+namespace AI_Assignment2
 {
     public class Data
     {
@@ -9,7 +9,7 @@ namespace ConsoleApplication4
 
         public Data(string id, string implies)
         {
-            _implies = implies;
+            _implies = implies.ToLower();
             _id = id.ToLower();
         }
 
