@@ -16,6 +16,7 @@ namespace ConsoleApplication4
             _queue = new List<Data>();
             _resultQueue = new  List<string>();
             ReadFromInput(fileName);
+
             Start();
         }
 
