@@ -12,15 +12,15 @@ namespace AI_Assignment2
         {
             //TruthTable _table = new TruthTable("C:/Users/Jake/Desktop/test1.txt");
 
-            switch (args[0])
+            switch (args[0].ToLower())
             {
-                case "FC":
+                case "fc":
                     //fc
                     break;
-                case "BC":
+                case "bc":
                     //bc
                     break;
-                case "TT":
+                case "tt":
                     TruthTable _table = new TruthTable(args[1]);
                     break;
             }
