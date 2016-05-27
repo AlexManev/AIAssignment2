@@ -7,6 +7,9 @@ namespace AI_Assignment2
     {
         private List<ClauseLocation> _clauseList;
 
+        /// <summary>
+        /// Contains a list of clauses and their locations.
+        /// </summary>
         public TableMap()
         {
             _clauseList = new List<ClauseLocation>();

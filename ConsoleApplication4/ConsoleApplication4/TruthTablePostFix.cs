@@ -4,12 +4,19 @@ using System.Linq;
 
 namespace AI_Assignment2
 {
+    /// <summary>
+    /// Postfix solver for horn-clauses. An Expression is given and it's result is returned.
+    /// </summary>
     class TruthTablePostFix
     {
         private Stack<char> _input;
         private Stack<char> _operators;
         private Stack<char> _output;
 
+        /// <summary>
+        /// Initialise input.
+        /// </summary>
+        /// <param name="input"></param>
         public TruthTablePostFix(string input)
         {
             _input = new Stack<char>();
@@ -40,6 +47,11 @@ namespace AI_Assignment2
                 _output.Push(_operators.Pop());
         }
 
+        /// <summary>
+        /// Check if input is an operator.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static bool IsOperator(char input)
         {
             switch (input)
@@ -55,6 +67,11 @@ namespace AI_Assignment2
             }
         }
 
+        /// <summary>
+        /// Check if the input is of a higher precedence than the current operator in _operators.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public bool HigherPrecedence(char input)
         {
             if (Precedence(input) > Precedence(_operators.Peek()))
@@ -63,6 +80,11 @@ namespace AI_Assignment2
                 return false;
         }
 
+        /// <summary>
+        /// Return precedence.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public int Precedence(char input)
         {
             switch (input)
@@ -81,6 +103,11 @@ namespace AI_Assignment2
                     return 0;
             }
         }
+
+        /// <summary>
+        /// Add operator
+        /// </summary>
+        /// <param name="input"></param>
         public void AddOperator(char input)
         {
 
@@ -105,6 +132,10 @@ namespace AI_Assignment2
             _operators.Push(input);
         }
 
+        /// <summary>
+        /// Solve newly created postfix expression.
+        /// </summary>
+        /// <returns></returns>
         public char Solve()
         {
             while (_output.Count != 0)

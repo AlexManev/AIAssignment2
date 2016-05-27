@@ -18,6 +18,10 @@ namespace AI_Assignment2
             CalculateASK();
         }
 
+        /// <summary>
+        /// Initialise input.
+        /// </summary>
+        /// <param name="input"></param>
         public void ReadInput(string input)
         {
             _truthTable = new List<List<char>>();
@@ -30,6 +34,9 @@ namespace AI_Assignment2
             _goal = lines[3];
         }
 
+        /// <summary>
+        /// Populate the empty truth table with 'T's and 'F's
+        /// </summary>
         public void Populate()
         {
             List<string[]> truthValues =  new List<string[]>();
@@ -69,6 +76,9 @@ namespace AI_Assignment2
             }
         }
 
+        /// <summary>
+        /// Add clauses to truth table and calculate their output.
+        /// </summary>
         public void CalculateTELL()
         {
             string tempString = "";
@@ -122,11 +132,13 @@ namespace AI_Assignment2
                     _truthTable[_tableMap.Find(s)].Add(truthSolver.Calculate(tempString));
                     tempString = "";
                     truthValue = "";
-
                 }
             }
         }
 
+        /// <summary>
+        /// Find where all clauses are true and return the number of true 'universes' than contain the "ASK" value
+        /// </summary>
         public void CalculateASK()
         {
             List<int> trueLocations = new List<int>();
