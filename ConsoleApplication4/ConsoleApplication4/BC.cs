@@ -94,6 +94,7 @@ namespace AI_Assignment2
 
         /// <summary>
         /// Reads form input file
+       ///  Populates the KnowladgeBase and adds the first element in the queue.
         /// </summary>
         private void ReadFromInput(string fileName)
         {
@@ -154,8 +155,7 @@ namespace AI_Assignment2
                     }
                     if (!foundInKB)
                     {
-                        Console.WriteLine("Error: The Knowlade Base doesn't know anything about '{0}'. \n \n Press any key to continue...", data);
-                        Console.ReadKey();
+                        Console.WriteLine("Error: The Knowlade Base doesn't know anything about '{0}'.", data);
                         Environment.Exit(0);
                     }
                 }

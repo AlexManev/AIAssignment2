@@ -9,7 +9,11 @@ namespace AI_Assignment2
 
         public Data(string id, string implies)
         {
-            _implies = implies.ToLower();
+            if (_implies != null)
+                _implies = implies.ToLower();
+            else
+                _implies = implies;
+
             _id = id.ToLower();
         }
 

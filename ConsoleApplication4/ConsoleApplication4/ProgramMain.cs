@@ -13,7 +13,7 @@ namespace AI_Assignment2
             switch (args[0].ToLower())
             {
                 case "fc":
-                    //fc
+                	FC fc = new FC(args[1]);
                     break;
                 case "bc":
                     BC bc = new BC(args[1]);
